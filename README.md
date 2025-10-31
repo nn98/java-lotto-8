@@ -6,15 +6,27 @@
 `기능 요구 사항`  
 - 사용자로부터 로또 구입 금액을 입력받아, 로또를 구매한다.  
   - 로또 1장의 가격은 `1,000`원이다.  
+  - `boolan isValidAmount(int amount)` >  [Validator](#`class Validator`)
 - 구매한 로또 한 장 당 1~45 범위의 로또 번호 6개를 뽑는다.  
   - 모든 번호는 중복되지 않는 6개의 정수이다.
+  - `class UserLottos`
+  - `Lotto buyLotto()`
 - 사용자로부터 당첨 번호 6개와 보너스 번호 1개를 입력받아, 당첨 여부를 판별한다.
   - 모든 번호는 중복되지 않는 6개의 정수이며, 쉼표를 기준으로 구분한다.
   - 6개의 번호를 입력받은 후, 그 번호들과 중복되지 않는 1개의 보너스 번호를 입력받는다.
+  - `class Winning`
+    - `List<Integer> numbers`
+    - `int bonusNumber`
+  - `boolean isValidBonusNumber(int bonusNumber)`
 - 판별된 당첨 여부로 당첨 내역 및 수익률을 출력하고, 로또 게임을 종료한다.
   - 구매한 로또의 번호와 당첨 번호를 비교한다.
+    - `class WinningChecker` - 이름이 이게 맞나..?
+      - `int matched`
+      - `int prize`
   - 당첨 번호와 일치하는 로또가 있을 경우, 일치한 개수와 총 당첨금을 계산한다.
+      - `void checkLottos(UserLottos)`
   - 구매 금액과 최종 당첨금을 가지고 최종 수익률을 계산한다.
+    - `double calcProfit(int amount)`
 - 사용자가 잘못된 값을 입력할 경우, `IllegalArgumentException`을 발생시키고,  
   "[ERROR]"로 시작하는 에러 메시지를 출력 후 그 부분부터 `입력을 다시 받는다.`
   - `예외`
@@ -27,6 +39,11 @@
   - 1000으로 나누어 떨어지지 않는 구입 금액 입력
   - `재입력`
   - 예외가 발생한 위치, 해당 메소드를 그대로 재실행
+  - #### `class Validator`
+    - `boolean isValidAmount(int amount)`
+    - `boolean isValidWinningNumbers(String numbers)`
+    - `boolean isValidBonusNumber(int bonusNumber)`
+    - ### ❗잘못된 입력에 대한 재시도, 반복 처리는 어떻게?
 
 # ✅ 체크리스트
 
