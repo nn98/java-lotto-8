@@ -107,6 +107,7 @@
     - `void checkLottos(UserLottos)`
   - 구매 금액과 최종 당첨금을 가지고 최종 수익률을 계산한다.
     - `double calcProfit(int amount)`
+- 
 - 사용자가 잘못된 값을 입력할 경우, `IllegalArgumentException`을 발생시키고,  
   "[ERROR]"로 시작하는 에러 메시지를 출력 후 그 부분부터 `입력을 다시 받는다.`
   - `예외`
@@ -271,6 +272,8 @@
 
 ```jsonpath
 
+상수값 추출해서 constants / Enum class로 정리
+
 Enum 객체 생성 - 로또 당첨 꽝부터 1~5등까지.
 number, bonusNumber, rank(등수), prize,
  
@@ -283,3 +286,11 @@ number, bonusNumber, rank(등수), prize,
 프로그램 진입점 Application 객체
 
 ```
+
+### `순서`
+
+- 의존관계 없이 고유하게 존재할 const, Enum > 
+- 값을 보유할 Lotto > 
+- Lotto 상속받아 당첨값 보유할 WinningLotto > 
+- 값을 비교할 WinningChecker
+- ...
