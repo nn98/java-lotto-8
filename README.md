@@ -268,3 +268,18 @@
 ---
 
 ## 📜 설계
+
+```jsonpath
+
+Enum 객체 생성 - 로또 당첨 꽝부터 1~5등까지.
+number, bonusNumber, rank(등수), prize,
+ 
+일치 여부를 판별할 WinningChecker 객체 
+
+입/출력 Input/OutpuView 객체
+
+실행 흐름을 관리할 LottoController 객체
+
+프로그램 진입점 Application 객체
+
+```
