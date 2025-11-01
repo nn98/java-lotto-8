@@ -108,7 +108,6 @@
     - `void checkLottos(UserLottos)`
   - 구매 금액과 최종 당첨금을 가지고 최종 수익률을 계산한다.
     - `double calcProfit(int amount)`
-- 
 - 사용자가 잘못된 값을 입력할 경우, `IllegalArgumentException`을 발생시키고,  
   "[ERROR]"로 시작하는 에러 메시지를 출력 후 그 부분부터 `입력을 다시 받는다.`
   - `예외`
