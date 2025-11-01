@@ -1,6 +1,8 @@
 package lotto.common.constant;
 
 public enum ErrorMessage {
+
+    INVALID_INPUT("[ERROR] 입력값은 공백이 아니어야 합니다."),
     INVALID_AMOUNT("[ERROR] 구입금액은 양의 정수여야 합니다."),
     INDIVISIBLE_AMOUNT("[ERROR] 구입금액은 1000으로 나누어 떨어지는 값이어야 합니다."),
 
@@ -12,4 +14,9 @@ public enum ErrorMessage {
     ErrorMessage(String message) {
         this.message = message;
     }
+
+    public String getMessage() {
+        return message;
+    }
+
 }
