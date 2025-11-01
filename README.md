@@ -153,6 +153,8 @@
 - [ ] 3항 연산자 배제
 - [ ] 중복 코드 추출
 - [ ] 작명에 자료형 배제
+- [ ] 메서드의 길이 15라인 이내로 제한
+- [ ] [Java Enum 적용해서 구현](https://github.com/nn98/java-lotto-8/wiki/Java-Enum%EC%9D%98-%EC%82%AC%EC%9A%A9-%EC%9D%B4%EC%9C%A0)
 
 ### ❗ 테스트
 
