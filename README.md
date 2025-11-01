@@ -158,25 +158,23 @@
 
 ### ❗ 테스트
 
-- [X] 
+- [ ] 클래스와 함수에 대한 단위 테스트를 통해 의도한 대로 정확하게 작동하는 영역을 확보한다.
+- [ ] 기능 구현을 완료한 후 가이드에 따라 모든 테스트가 성공적으로 실행되는지 확인한다.
+- [ ] JUnit 5와 AssertJ를 이용하여 정리한 기능 목록이 정상적으로 작동하는지 테스트 코드로 확인한다.
+- [ ] 구현한 기능에 대한 단위 테스트를 작성한다. 단, UI(System.out, System.in, Scanner) 로직은 제외한다.
+- [X] 단위 테스트 작성이 익숙하지 않다면 LottoTest를 참고하여 학습한 후 테스트를 작성한다.
 
 ### ❗ 의존성
 
-- [X] 
+- [ ] `camp.nextstep.edu.missionutils`에서 제공하는 `Randoms` 및 `Console` API를 사용하여 구현해야 한다.
+  - [ ] Random 값 추출은 `camp.nextstep.edu.missionutils.Randoms`의 `pickUniqueNumbersInRange()`를 활용한다.
+  - [ ] 사용자가 입력하는 값은 `camp.nextstep.edu.missionutils.Console`의 `readLine()`을 활용한다.
 
 ---
 
 ## 🛠️ 기능
 
 ### ❗ 입ㆍ출력
-
-`입력`
-
-- [X] 
-
-`출력`
-
-- [X] 
 
 ### 💡 생각할 부분
 
