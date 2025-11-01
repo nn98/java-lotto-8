@@ -125,7 +125,7 @@
     - `boolean isValidAmount(int amount)`
     - `boolean isValidWinningNumbers(String numbers)`
     - `boolean isValidBonusNumber(int bonusNumber)`
-    - ### [❗잘못된 입력에 대한 재시도, 반복 처리는 어떻게?](-생각할-부분)
+    - ### [❗잘못된 입력에 대한 재시도, 반복 처리는 어떻게?](#-생각할-부분)
 
 ---
 
