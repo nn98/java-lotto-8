@@ -176,7 +176,8 @@
 
 ### ❗ 입ㆍ출력
 
-<h3>`입력`</h3>
+<details><summary><h3><code>입력</code></h3></summary>
+
 <ul>
 
 - [ ] 로또 구입 금액을 입력 받는다. 구입 금액은 1,000원 단위로 입력 받으며 1,000원으로 나누어 떨어지지 않는 경우 예외 처리한다.
@@ -193,9 +194,12 @@
 </ul>
 <pre><code data-highlighted="yes" class="hljs language-undefined">7</code></pre>
 
+</details>
+
 ---
 
-<h3>`출력`</h3>
+<details><summary><h3><code>출력</code></h3></summary>
+
 <ul>
 
 - [ ] 발행한 로또 수량 및 번호를 출력한다. 로또 번호는 오름차순으로 정렬하여 보여준다.
@@ -231,7 +235,6 @@
 <h4>실행 결과 예시</h4>
 <pre><code data-highlighted="yes" class="hljs language-prolog">구입금액을 입력해 주세요.
 <span class="hljs-number">8000</span>
-
 <span class="hljs-number">8</span>개를 구매했습니다.
 [<span class="hljs-number">8</span>, <span class="hljs-number">21</span>, <span class="hljs-number">23</span>, <span class="hljs-number">41</span>, <span class="hljs-number">42</span>, <span class="hljs-number">43</span>]
 [<span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">11</span>, <span class="hljs-number">16</span>, <span class="hljs-number">32</span>, <span class="hljs-number">38</span>]
@@ -241,13 +244,10 @@
 [<span class="hljs-number">7</span>, <span class="hljs-number">11</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>, <span class="hljs-number">42</span>, <span class="hljs-number">43</span>]
 [<span class="hljs-number">2</span>, <span class="hljs-number">13</span>, <span class="hljs-number">22</span>, <span class="hljs-number">32</span>, <span class="hljs-number">38</span>, <span class="hljs-number">45</span>]
 [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">14</span>, <span class="hljs-number">22</span>, <span class="hljs-number">45</span>]
-
 당첨 번호를 입력해 주세요.
 <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>
-
 보너스 번호를 입력해 주세요.
 <span class="hljs-number">7</span>
-
 당첨 통계
 ---
 <span class="hljs-number">3</span>개 일치 (<span class="hljs-number">5</span>,<span class="hljs-number">000</span>원) - <span class="hljs-number">1</span>개
@@ -256,6 +256,10 @@
 <span class="hljs-number">5</span>개 일치, 보너스 볼 일치 (<span class="hljs-number">30</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span>원) - <span class="hljs-number">0</span>개
 <span class="hljs-number">6</span>개 일치 (<span class="hljs-number">2</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span>원) - <span class="hljs-number">0</span>개
 총 수익률은 <span class="hljs-number">62.5</span><span class="hljs-comment">%입니다.</span></code></pre>
+
+</details>
+
+---
 
 ### 💡 생각할 부분
 
