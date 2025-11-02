@@ -5,7 +5,7 @@ import lotto.common.constant.ErrorMessage;
 
 public class InputView {
 
-    public static String readLine() {
+    public String readLine() {
         String line = Console.readLine();
         if (line.isBlank()) {
             throw new IllegalArgumentException(ErrorMessage.INVALID_INPUT.getMessage());
@@ -13,7 +13,7 @@ public class InputView {
         return line;
     }
 
-    public static int readPositiveInt() {
+    public int readPositiveInt() {
         try {
             int input = Integer.parseInt(readLine());
             if (input < 1) {

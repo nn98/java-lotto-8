@@ -30,7 +30,7 @@ public class LottoController {
     private int readUserInputAmount() {
         try {
             outputView.printInputAmount();
-            return validAmount(InputView.readPositiveInt());
+            return validAmount(inputView.readPositiveInt());
         } catch (IllegalArgumentException exception) {
             outputView.printError(exception);
             return readUserInputAmount();
@@ -45,7 +45,7 @@ public class LottoController {
     }
 
     private void noticePurchaseResult(int amount, String lotteriesToString) {
-        OutputView.printPurchasedLotteries(amount, lotteriesToString);
+        outputView.printPurchasedLotteries(amount, lotteriesToString);
     }
 
 }
