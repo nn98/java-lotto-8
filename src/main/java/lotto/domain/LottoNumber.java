@@ -11,7 +11,7 @@ public class LottoNumber implements Comparable<LottoNumber> {
     }
 
     public int getNumber() {
-        return 0;
+        return this.number;
     }
 
     @Override
