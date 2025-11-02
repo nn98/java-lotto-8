@@ -155,7 +155,7 @@
   - [ ] 보너스 번호는 로또 번호와 동일한 유효성 검증을 진행하고, 당첨 번호들과 중복되지 않아야 한다.
   - [ ] winningNumbers, bonusNumber 로 WinningNumbers 를 생성한다.
   - [ ] WinningNumbers 는 Lotto 를 멤버로 가진다.
-  - [O] `class WinningNumbers`
+  - [X] `class WinningNumbers`
     - [X] `Lotto lotto`
   
       - #### ❗Lotto 를 멤버로 가지기 VS 로또를 상속해 numbers 를 멤버로 가지기
@@ -173,7 +173,9 @@
       
     - [X] `LottoNumber bonusNumber`
     - [X] `validate(LottoNumber bonusNumber)` in `constructor()`
-    - [O] `determineWinning(Lotto userLotto)` 로또의 당첨 여부 판별, 등수 반환
+    - [X] `determineWinning(Lotto userLotto)` 로또의 당첨 여부 판별, 등수 반환
+    - [X] `calcMatchCount(Lotto userLotto)` Lotto 클래스의 일치 번호 개수 계산 기능 활용
+    - [X] `isBonusNumberMatched(Lotto userLotto)` Lotto 클래스의 특정 로또 번호 포함 여부 기능 활용
   
       - #### ❗보너스넘버의 중복 검증은 어느 클래스의 책임인가?
       - 입력값 기초 유효성 검증은 InputView 가. 

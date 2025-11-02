@@ -21,7 +21,17 @@ public class WinningNumbers {
     }
 
     public Winning determineWinning(Lotto userLotto) {
-        return null;
+        int matchCount = calcMatchCount(userLotto);
+        boolean isBonusNumberMatched = isBonusNumberMatched(userLotto);
+        return Winning.valueOf(matchCount, isBonusNumberMatched);
+    }
+
+    private int calcMatchCount(Lotto userLotto) {
+        return userLotto.calcMatchCount(this.lotto);
+    }
+
+    private boolean isBonusNumberMatched(Lotto userLotto) {
+        return userLotto.contains(this.bonusNumber);
     }
 
 }
