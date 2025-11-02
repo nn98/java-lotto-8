@@ -120,7 +120,16 @@
       - [X] 값은 숫자를 가진 경우 equals - `기능`
       - [X] 다른 숫자를 가진 경우 notEquals - `기능`
     - [ ] `validate()`에서 위 유효성 검증 로직 구현하기
-  
+
+- [ ] 구매한 로또의 정보를 저장한다
+  - [ ] `class PurchasedLottos`
+  - [ ] 저장된 로또들의 정보를 출력할 메소드를 구현한다
+  - [ ] `String allLottoNumbersToString()`
+
+- [ ] 로또 구입 금액에 맞춰 발행한 로또 수량 및 번호를 출력한다.
+  - [ ] 로또 번호는 오름차순으로 정렬하여 보여준다.
+  - [ ] `String numbersToString()`
+
 - [ ] 사용자로부터 당첨 번호 6개와 보너스 번호 1개를 입력받는다.
   
   - [ ] 6개의 번호를 입력받는다.
@@ -201,7 +210,7 @@
 
 - [ ] 판별된 당첨 여부로 당첨 수 및 당첨금을 출력한다.
   - [ ] 일치한 개수와 총 당첨금을 계산한다.
-  - [ ] `List<Winning> checkWinning(UserLottos)`
+  - [ ] `List<Winning> checkWinning(purchasedLottos)`
   
 - [ ] 판별된 당첨 결과와 로또 구매 금액을 기반으로 수익률을 출력한다.
   - [ ] 구매 금액과 최종 당첨금을 가지고 최종 수익률을 계산한다.
