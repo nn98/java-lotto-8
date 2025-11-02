@@ -113,6 +113,7 @@
   - [ ] 모든 로또 번호는 중복되지 않는다.
   - [ ] `class LottoNumber`
     - [ ] `validate()` in `constructor()`
+    - [X] `getNumber()` 구현 및 toString() 에 numbers 사용
     - ### `class LottoNumber` `테스트`
       - [X] 정상 범위로 생성 - `기능`
       - [X] 미만 범위로 생성 - `예외`
