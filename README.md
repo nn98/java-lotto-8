@@ -87,6 +87,11 @@
 ### `기능 요구 사항`
 
 - [ ] 사용자로부터 로또 구입 금액을 입력받아, 로또를 구매한다.
+- `class InputView`
+- 모든 입력값에 대한 기초적 유효성 검증 담당
+- `readLine()` is not blank
+- `readInt()` is Numeric
+- `readWinningNumbers()` is can split by "," / each token is Numeric
   
   - [ ] 로또 1장의 가격은 `1,000`원이다.
   - [ ] `boolan isValidAmount(int amount)` > [Validator](#class-validator)
@@ -102,7 +107,7 @@
         - [X] 6개 미만의 로또 번호로 생성 - `예외`
         - [X] 6개 초과의 로또 번호로 생성 - `예외`
       - [ ] `validate()`에서 위 유효성 검증 로직 구현하기 
-      - ❗어차피 LottoNumber 가 검증하는데 중복 검증 필요성?
+        - #### ❗어차피 LottoNumber 가 검증하는데 중복 검증 필요성?
 
   - [ ] 모든 로또 번호는 1~45 범위의 숫자이다.
   - [ ] 모든 로또 번호는 중복되지 않는다.
@@ -126,12 +131,12 @@
     - [ ] `validate()` in `readWinningNumbers()`
     - [ ] 6개의 숫자를 쉼표로 구분해서 입력 - `기능`
     - [ ] 숫자를 공백 등 잘못된 구분자로 구분해서 입력 - `예외`
-      - ❗공백은 `trim()`등으로 제거하면 되지 않나? 
+      - #### ❗공백은 `trim()`등으로 제거하면 되지 않나? 
       - 쉼표가 아닌 공백을 구분자로 사용할 경우 trim()으론 숫자 사이의 공백을 없앨 수 없고,  
         공백을 포함한 숫자를 parse 시도할 경우 런타임 예외가 발생한다. 예외처리가 타당.
-      - ❗테스트 구현은?  
+      - #### ❗테스트 구현은?  
         > 구현한 기능에 대한 단위 테스트를 작성한다. `단, UI(System.out, System.in, Scanner) 로직은 제외한다.`
-      - ❗UI 로직은 테스트하지 않지만, 유효성 검증은 테스트해도 되지 않나?  
+      - #### ❗UI 로직은 테스트하지 않지만, 유효성 검증은 테스트해도 되지 않나?  
         일단은 비즈니스 로직에 유효성 검증이 있으니 스킵, 추후 고려
   - [ ] 6개의 당첨 번호로 winningNumbers List 를 생성한다.
     
@@ -139,9 +144,32 @@
   - [ ] 보너스 번호는 로또 번호와 동일한 유효성 검증을 진행하고, 당첨 번호들과 중복되지 않아야 한다.
   - [ ] `class WinningNumbers`
     - [ ] `Lotto lotto`
+  
+      - #### ❗Lotto 를 멤버로 가지기 VS 로또를 상속해 numbers 를 멤버로 가지기
+      - 상속과 다형성의 명확한 원칙에 따른 답 존재.
+      - `LSP (리스코프 치환 원칙)` 위반
+      - > 자식 클래스는 부모 클래스를 대체할 수 있어야 한다
+        - 6개의 `번호`를 가진 `로또`와, 6개 + 보너스 1개의 `당첨 번호 정보`를 가진 `당첨 정보` 는  
+          상속 관계로는 바람직하지 않다. 기능적으론 대체할 수 있을지언정 논리적으로 대체의 합리성이 부족
+      - == 상속(is-a) 관계가 아닌 컴포지션(has-a) 관계로 구현하는 것이 바람직하다.
+      - 그렇다면 WinningLotto보단 Winning 이나 WinningInfo 등이 알맞은 클래스명 아닌가?
+      - ### 클래스는 `무엇`을 할 것인지 그 역할을 이름으로 짐작할 수 있도록 작성되어야 한다.
+      - `Lotto`는 6개의 로또 번호를 가진 객체, WinningLotto 는 6개의 _당첨_ 번호와 1개의 보너스 번호를 가진 객체.
+      - 복권 / 당첨 / 당첨 복권 / 당첨 번호 / 당첨 정보 등 다양한 역할과 이름 중 적합한 것은?
+      - 구글 검색 상 상위 검색어는 `당첨 번호`. WinningLotto -> WinningNumbers
+
     - [ ] `int bonusNumber`
     - [ ] `validate()` in `constructor()`
-    - [ ] `boolean isValidBonusNumber(int bonusNumber)`
+    - [ ] `isValidBonusNumber(int bonusNumber)`
+  
+      - #### ❗보너스넘버의 중복 검증은 어느 클래스의 책임인가?
+      - 입력값 기초 유효성 검증은 InputView가. 
+      - 상세 유효성 검증은 LottoNumber가.
+      - 중복 검증만 하면 될 텐데 Lotto VS WinningNumbers?
+      - 실제 numbers 는 Lotto 내부에. bonusNumber 는 WinningNumbers 내부에.
+      - 즉, 보너스넘버는 WinningNumbers 만의 멤버이므로,   
+        `WinningNumbers` 클래스가 컴포지션 관계인 `Lotto` 클래스의 행위를 통해 검증.
+  
     - ### ㄴ `테스트`
       - [X] 보너스 번호가 로또 번호와 중복되지 않고, 범위를 벗어나지 않음 - `기능`
       - [X] 보너스 번호가 로또 번호와 중복 - `예외`
@@ -150,19 +178,6 @@
   - [ ] winningNumbers, bonusNumber 로 WinningNumbers 를 생성한다. 
   - [ ] WinningNumbers 는 Lotto 를 멤버로 가진다.
     
-  - ❗Lotto 를 멤버로 가지기 VS 로또를 상속해 numbers 를 멤버로 가지기
-  - 상속과 다형성의 명확한 원칙에 따른 답 존재. 
-  - `LSP (리스코프 치환 원칙)` 위반
-  - > 자식 클래스는 부모 클래스를 대체할 수 있어야 한다
-  - 6개의 `번호`를 가진 `로또`와, 6개 + 보너스 1개의 `당첨 번호 정보`를 가진 `당첨 정보` 는  
-    상속 관계로는 바람직하지 않다. 기능적으론 대체할 수 있을지언정 논리적으로 대체의 합리성이 부족
-  - == 상속(is-a) 관계가 아닌 컴포지션(has-a) 관계로 구현하는 것이 바람직하다.
-  - 그렇다면 WinningLotto보단 Winning 이나 WinningInfo 등이 알맞은 클래스명 아닌가?
-  - ### 클래스는 `무엇`을 할 것인지 그 역할을 이름으로 짐작할 수 있도록 작성되어야 한다.
-  - `Lotto`는 6개의 로또 번호를 가진 객체, WinningLotto 는 6개의 _당첨_ 번호와 1개의 보너스 번호를 가진 객체.
-  - 복권 / 당첨 / 당첨 복권 / 당첨 번호 / 당첨 정보 등 다양한 역할과 이름 중 적합한 것은?
-  - 구글 검색 상 상위 검색어는 `당첨 번호`. WinningLotto -> WinningNumbers
-  
 - [ ] 판별된 당첨 여부로 당첨 내역 및 수익률을 출력하고, 로또 게임을 종료한다.
   - [ ] 구매한 로또의 번호와 당첨 번호를 비교한다.
     - [ ] `class WinningChecker` - [ ] 이름이 이게 맞나..?
