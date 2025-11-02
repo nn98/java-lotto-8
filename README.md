@@ -96,19 +96,20 @@
   - [ ] 로또 1장의 가격은 `1,000`원이다.
   - [ ] `boolan isValidAmount(int amount)` > [Validator](#class-validator)
 
-- [ ] 로또는 6개의 로또 번호로 구성된다.
-- [ ] 모든 로또 번호는 중복되지 않는다.
+- [X] 로또는 6개의 로또 번호로 구성된다.
+- [X] 모든 로또 번호는 중복되지 않는다.
 
-  - [ ] `class Lotto`
-    - [ ] `Set<LottoNumber> numbers`
-      - [ ] `validate()` in `constructor()`
+  - [X] `class Lotto`
+    - [X] `Set<LottoNumber> numbers`
+      - [X] `validate()` in `constructor()`
       - ### `class Lotto` `테스트`
         - [X] 6개의 로또 번호로 생성 - `기능`
         - [X] 중복된 로또 번호로 생성 - `예외`
         - [X] 6개 미만의 로또 번호로 생성 - `예외`
         - [X] 6개 초과의 로또 번호로 생성 - `예외`
-      - [ ] `validate()`에서 위 유효성 검증 로직 구현하기 
+      - [X] `validate()`에서 위 유효성 검증 로직 구현하기 
         - #### ❗어차피 LottoNumber 가 검증하는데 중복 검증 필요성?
+        - 검증 로직이 매우 복잡한 게 아닌 이상 유효성 검증이 철저할수록 완성도 증진한다 판단
 
   - [X] 모든 로또 번호는 1~45 범위의 숫자이다.
   - [X] `class LottoNumber`
