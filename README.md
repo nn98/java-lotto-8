@@ -142,6 +142,8 @@
     
   - [ ] 1개의 보너스 번호를 입력받는다.
   - [ ] 보너스 번호는 로또 번호와 동일한 유효성 검증을 진행하고, 당첨 번호들과 중복되지 않아야 한다.
+  - [ ] winningNumbers, bonusNumber 로 WinningNumbers 를 생성한다.
+  - [ ] WinningNumbers 는 Lotto 를 멤버로 가진다.
   - [ ] `class WinningNumbers`
     - [ ] `Lotto lotto`
   
@@ -175,8 +177,6 @@
       - [X] 보너스 번호가 로또 번호와 중복 - `예외`
       - [X] 미만 범위로 생성 - `예외`
       - [X] 초과 범위로 생성 - `예외`
-  - [ ] winningNumbers, bonusNumber 로 WinningNumbers 를 생성한다. 
-  - [ ] WinningNumbers 는 Lotto 를 멤버로 가진다.
     
 - [ ] 판별된 당첨 여부로 당첨 내역 및 수익률을 출력하고, 로또 게임을 종료한다.
   - [ ] 구매한 로또의 번호와 당첨 번호를 비교한다.
