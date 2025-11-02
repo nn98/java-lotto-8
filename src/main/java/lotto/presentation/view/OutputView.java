@@ -8,8 +8,8 @@ public class OutputView {
         System.out.println("구입금액을 입력해 주세요.");
     }
 
-    public static void printLottoCountByAmount(int count) {
-        System.out.printf("%d개를 구매했습니다.", count);
+    public static void printPurchasedLotteries(int count, String lotteriesToString) {
+        System.out.printf("%d개를 구매했습니다.\n%s", count, lotteriesToString);
     }
 
     public static void printInputWinningNumbers() {
@@ -32,6 +32,10 @@ public class OutputView {
 
     public static void printError(Exception exception) {
         System.out.println(exception.getMessage());
+    }
+
+    public static void prinLine(String line) {
+        System.out.println(line);
     }
 
 }

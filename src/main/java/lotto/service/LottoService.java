@@ -26,4 +26,7 @@ public class LottoService {
         return new Lotto(Randoms.pickUniqueNumbersInRange(1, 45, 6));
     }
 
+    public String getUserLotteriesToString() {
+        return userLotteries.toString();
+    }
 }

@@ -18,19 +18,21 @@ public class LottoController {
     }
 
     public void run() {
-        issuanceLottoByUserInputAmount();
-    }
-
-    private void issuanceLottoByUserInputAmount() {
         int amount = readUserInputAmount();
+        issuanceLottoByAmount(amount);
+        noticePurchaseResult(amount / 1000, lottoService.getUserLotteriesToString());
+    }
+    private void issuanceLottoByAmount(int amount) {
         lottoService.issuanceLotteries(amount);
+
     }
 
     private int readUserInputAmount() {
         try {
+            outputView.printInputAmount();
             return validAmount(InputView.readPositiveInt());
         } catch (IllegalArgumentException exception) {
-            OutputView.printError(exception);
+            outputView.printError(exception);
             return readUserInputAmount();
         }
     }
@@ -40,6 +42,10 @@ public class LottoController {
             throw new IllegalArgumentException(ErrorMessage.INDIVISIBLE_AMOUNT.getMessage());
         }
         return amount;
+    }
+
+    private void noticePurchaseResult(int amount, String lotteriesToString) {
+        OutputView.printPurchasedLotteries(amount, lotteriesToString);
     }
 
 }

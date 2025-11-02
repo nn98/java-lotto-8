@@ -12,4 +12,5 @@ public class Application {
         LottoController controller = new LottoController(inputView, outputView);
         controller.run();
     }
+
 }

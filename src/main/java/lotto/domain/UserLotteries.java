@@ -3,6 +3,7 @@ package lotto.domain;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 import lotto.common.constant.ErrorMessage;
 
 public class UserLotteries {
@@ -30,5 +31,10 @@ public class UserLotteries {
 
     public List<Lotto> getLotteries() {
         return Collections.unmodifiableList(lotteries);
+    }
+
+    @Override
+    public String toString() {
+        return lotteries.stream().map(Lotto::toString).collect(Collectors.joining("\n"));
     }
 }
