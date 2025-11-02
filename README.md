@@ -101,7 +101,7 @@
   - [ ] `class Lotto`
     - [ ] `Set<LottoNumber> numbers`
       - [ ] `validate()` in `constructor()`
-      - ### ㄴ `테스트`
+      - ### `class Lotto` `테스트`
         - [X] 6개의 로또 번호로 생성 - `기능`
         - [X] 중복된 로또 번호로 생성 - `예외`
         - [X] 6개 미만의 로또 번호로 생성 - `예외`
@@ -113,7 +113,7 @@
   - [ ] 모든 로또 번호는 중복되지 않는다.
   - [ ] `class LottoNumber`
     - [ ] `validate()` in `constructor()`
-    - ### ㄴ `테스트`
+    - ### `class LottoNumber` `테스트`
       - [X] 정상 범위로 생성 - `기능`
       - [X] 미만 범위로 생성 - `예외`
       - [X] 초과 범위로 생성 - `예외`
@@ -151,7 +151,7 @@
   - [ ] 보너스 번호는 로또 번호와 동일한 유효성 검증을 진행하고, 당첨 번호들과 중복되지 않아야 한다.
   - [ ] winningNumbers, bonusNumber 로 WinningNumbers 를 생성한다.
   - [ ] WinningNumbers 는 Lotto 를 멤버로 가진다.
-  - [ ] `class WinningNumbers`
+  - [O] `class WinningNumbers`
     - [ ] `Lotto lotto`
   
       - #### ❗Lotto 를 멤버로 가지기 VS 로또를 상속해 numbers 를 멤버로 가지기
@@ -166,8 +166,8 @@
       - `Lotto`는 6개의 로또 번호를 가진 객체, WinningLotto 는 6개의 _당첨_ 번호와 1개의 보너스 번호를 가진 객체.
       - 복권 / 당첨 / 당첨 복권 / 당첨 번호 / 당첨 정보 등 다양한 역할과 이름 중 적합한 것은?
       - 구글 검색 상 상위 검색어는 `당첨 번호`. WinningLotto -> WinningNumbers
-
-    - [ ] `int bonusNumber`
+      
+    - [O] `int bonusNumber`
     - [ ] `validate()` in `constructor()`
     - [ ] `isValidBonusNumber(int bonusNumber)`
   
@@ -179,11 +179,15 @@
       - 즉, 보너스넘버는 WinningNumbers 만의 멤버이므로,   
         `WinningNumbers` 클래스가 컴포지션 관계인 `Lotto` 클래스의 행위를 통해 검증.
   
-    - ### ㄴ `테스트`
-      - [ ] 보너스 번호가 로또 번호와 중복되지 않고, 범위를 벗어나지 않음 - `기능`
-      - [ ] 보너스 번호가 로또 번호와 중복 - `예외`
-      - [ ] 미만 범위로 생성 - `예외`
-      - [ ] 초과 범위로 생성 - `예외`
+    - ### `class WinningNumbers` `테스트`
+      - 대부분의 테스트가 `Lotto` 와 중복되는 부분이 있지만 정확한 테스트를 위해 전부 구현하기
+      - [X] 6개의 로또 번호와 중복되지 않는 보너스 번호로 생성 - `기능`
+      - [X] 6개 미만의 로또 번호로 생성 - `예외`
+      - [X] 6개 초과의 로또 번호로 생성 - `예외`
+      - [X] 중복된 로또 번호로 생성 - `예외`
+      - [X] 범위를 벗어난 로또 번호로 생성 - `예외`
+      - [X] 범위를 벗어난 보너스 번호로 생성 - `예외`
+      - [X] 보너스 번호가 로또 번호와 중복 - `예외`
 
 - [ ] 당첨 번호와 보너스 번호로 로또들의 당첨 여부를 판별한다.
 
@@ -206,7 +210,7 @@
       - [X] `Winning valueOf()`
       - [X] `calcPrize()`
       - `getName()` 안해도 테스트에서 문제없이 비교 가능. getter 지양. 
-      - ### ㄴ `테스트`
+      - ### `enum Winning` `테스트`
         - [X] 당첨 번호와 보너스 번호 일치 여부로 순위 반환
           - [X] 6개 일치부터 ~ 3개 미만 일치까지, `name` 과 `prize` `@CsvSource` 로 테스트 - `기능`
         - [X] 지정되지 않은 값으로 `valueOf()` - `예외`
