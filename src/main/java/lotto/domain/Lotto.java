@@ -39,4 +39,10 @@ public class Lotto {
         return this.numbers.contains(lottoNumber);
     }
 
+    public int calcMatchCount(Lotto targetLotto) {
+        return (int)this.numbers.stream()
+                .filter(targetLotto::contains)
+                .count();
+    }
+
 }
