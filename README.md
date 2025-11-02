@@ -105,8 +105,7 @@
 
 - [X] 로또 구입 금액에 맞춰 발행한 로또 수량 및 번호를 출력한다.
 - [X] `class OutputView` - 로또 구매 결과 안내
-  - [ ] 로또 번호는 오름차순으로 정렬하여 보여준다.
-  - [ ] `String numbersToString()`
+  - [X] `toString()` 재정의 - 로또 번호는 오름차순으로 정렬하여 보여준다.
 
   - [X] 로또 1장의 가격은 `1,000`원이다.
   - [X] `validAmount(int amount)` > [Validator](#class-validator) - 유효한 입력값을 반복해서 받을 수 있는 구조로 구현
