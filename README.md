@@ -86,18 +86,30 @@
 
 ### `기능 요구 사항`
 
-- [ ] 사용자로부터 로또 구입 금액을 입력받아, 로또를 구매한다.
-- ### ❗구입 금액이 0원이라면 예외로 처리할까 기능으로 처리할까?
-  - 기능으로 처리한다면 당첨 번호를 받을 필요 없이 그냥 프로그램 종료도 가능.
-  - 예외로 처리해서 다시 입력받는 것이 정상적/바람직한 구현이라 판단.
+- [X] 사용자로부터 로또 구입 금액을 입력받는다.
+- [X] `class OutputView` - 구입 금액 입력 안내
+- [X] 구입 금액이 유효하다면, 구입 금액에 맞춰 로또를 구매한다.
+
+  - ### ❗구입 금액이 0원이라면 예외로 처리할까 기능으로 처리할까?
+    - 기능으로 처리한다면 당첨 번호를 받을 필요 없이 그냥 프로그램 종료도 가능.
+    - 예외로 처리해서 다시 입력받는 것이 정상적/바람직한 구현이라 판단.
 - `class InputView`
 - 모든 입력값에 대한 기초적 유효성 검증 담당
 - `readLine()` is not blank
 - `readInt()` is Numeric
 - `readWinningNumbers()` is can split by "," / each token is Numeric
-  
-  - [ ] 로또 1장의 가격은 `1,000`원이다.
-  - [ ] `boolan isValidAmount(int amount)` > [Validator](#class-validator)
+
+- [X] 구매한 로또의 정보를 저장한다
+  - [X] `class UserLotteries`
+  - [X] `toString()` 저장된 로또들의 정보를 출력하기 위해 toString을 재정의한다
+
+- [X] 로또 구입 금액에 맞춰 발행한 로또 수량 및 번호를 출력한다.
+- [X] `class OutputView` - 로또 구매 결과 안내
+  - [ ] 로또 번호는 오름차순으로 정렬하여 보여준다.
+  - [ ] `String numbersToString()`
+
+  - [X] 로또 1장의 가격은 `1,000`원이다.
+  - [X] `validAmount(int amount)` > [Validator](#class-validator) - 유효한 입력값을 반복해서 받을 수 있는 구조로 구현
 
 - [X] 로또는 6개의 로또 번호로 구성된다.
 - [X] 모든 로또 번호는 중복되지 않는다.
@@ -107,6 +119,7 @@
       - [X] `validate()` in `constructor()`
       - [X] `contains(LottoNumber lottoNumber)` 해당 로또에 특정 로또 번호의 포함 여부 반환
       - [X] `calcMatchCount(Lotto targetLotto)` 다른 로또와 비교해 일치하는 번호의 개수 계산해 반환
+      - [X] `toString()` 구매 결과 출력을 위한 toString 재정의
       - ### `class Lotto` `테스트`
         - [X] 6개의 로또 번호로 생성 - `기능`
         - [X] 중복된 로또 번호로 생성 - `예외`
@@ -119,7 +132,7 @@
   - [X] 모든 로또 번호는 1~45 범위의 숫자이다.
   - [X] `class LottoNumber`
     - [X] `validate()` in `constructor()`
-    - [X] `getNumber()` 구현 및 toString() 에 numbers 사용
+    - [X] `getNumber()` 구현 및 `toString()` 에 numbers 사용
     - ### `class LottoNumber` `테스트`
       - [X] 정상 범위로 생성 - `기능`
       - [X] 미만 범위로 생성 - `예외`
@@ -127,15 +140,6 @@
       - [X] 값은 숫자를 가진 경우 equals - `기능`
       - [X] 다른 숫자를 가진 경우 notEquals - `기능`
     - [X] `validate()`에서 위 유효성 검증 로직 구현하기
-
-- [ ] 구매한 로또의 정보를 저장한다
-  - [ ] `class PurchasedLotteries`
-  - [ ] 저장된 로또들의 정보를 출력할 메소드를 구현한다
-  - [ ] `String allLottoNumbersToString()`
-
-- [ ] 로또 구입 금액에 맞춰 발행한 로또 수량 및 번호를 출력한다.
-  - [ ] 로또 번호는 오름차순으로 정렬하여 보여준다.
-  - [ ] `String numbersToString()`
 
 - [ ] 사용자로부터 당첨 번호 6개와 보너스 번호 1개를 입력받는다.
   
