@@ -13,4 +13,8 @@ public class LottoController {
         this.outputView = outputView;
     }
 
+    public void run() {
+
+    }
+
 }
