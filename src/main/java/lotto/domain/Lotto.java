@@ -47,6 +47,9 @@ public class Lotto {
 
     @Override
     public String toString() {
-        return numbers.toString();
+        return numbers.stream()
+                .sorted()
+                .toList()
+                .toString();
     }
 }
