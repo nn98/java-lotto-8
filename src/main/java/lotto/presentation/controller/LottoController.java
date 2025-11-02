@@ -3,15 +3,18 @@ package lotto.presentation.controller;
 import lotto.common.constant.ErrorMessage;
 import lotto.presentation.view.InputView;
 import lotto.presentation.view.OutputView;
+import lotto.service.LottoService;
 
 public class LottoController {
 
     private final InputView inputView;
     private final OutputView outputView;
+    private final LottoService lottoService;
 
     public LottoController(InputView inputView, OutputView outputView) {
         this.inputView = inputView;
         this.outputView = outputView;
+        this.lottoService = new LottoService();
     }
 
     public void run() {
@@ -20,12 +23,12 @@ public class LottoController {
 
     private void issuanceLottoByUserInputAmount() {
         int amount = readUserInputAmount();
-
+        lottoService.issuanceLotteries(amount);
     }
 
     private int readUserInputAmount() {
         try {
-            return validAmount(this.inputView.readPositiveInt());
+            return validAmount(InputView.readPositiveInt());
         } catch (IllegalArgumentException exception) {
             OutputView.printError(exception);
             return readUserInputAmount();
