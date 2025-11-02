@@ -171,8 +171,8 @@
       - 구글 검색 상 상위 검색어는 `당첨 번호`. WinningLotto -> WinningNumbers
       
     - [X] `LottoNumber bonusNumber`
-    - [ ] `validate()` in `constructor()`
-    - [ ] `isValidBonusNumber(LottoNumber bonusNumber)`
+    - [X] `validate(LottoNumber bonusNumber)` in `constructor()`
+    - [O] `determineWinning(Lotto userLotto)` 로또의 당첨 여부 판별, 등수 반환
   
       - #### ❗보너스넘버의 중복 검증은 어느 클래스의 책임인가?
       - 입력값 기초 유효성 검증은 InputView 가. 
