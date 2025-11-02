@@ -51,4 +51,16 @@ class LottoNumberTest {
         // when & then
         assertThat(number1).isEqualTo(number2);
     }
+
+    @DisplayName("다른 숫자를 가진 로또 번호는 다른 객체로 판단한다")
+    @Test
+    void 다른_숫자를_가진_로또_번호는_다른_객체로_판단한다() {
+        // given
+        LottoNumber number1 = new LottoNumber(1);
+        LottoNumber number2 = new LottoNumber(2);
+
+        // when & then
+        assertThat(number1).isNotEqualTo(number2);
+    }
+
 }
