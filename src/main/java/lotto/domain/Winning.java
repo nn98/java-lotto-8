@@ -7,9 +7,9 @@ public enum Winning {
     LOSING(0,false),
     FIFTH(3,false),
     FOURTH(4,false),
-    THIRD(0,false),
-    SECOND(0,true),
-    FIRST(0,false);
+    THIRD(5,false),
+    SECOND(5,true),
+    FIRST(6,false);
 
     private final int matchCount;
     private final boolean isBonusNumberMatched;
