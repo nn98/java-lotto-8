@@ -154,7 +154,7 @@
   - [ ] 1개의 보너스 번호를 입력받는다.
   - [ ] 보너스 번호는 로또 번호와 동일한 유효성 검증을 진행하고, 당첨 번호들과 중복되지 않아야 한다.
   - [ ] winningNumbers, bonusNumber 로 WinningNumbers 를 생성한다.
-  - [ ] WinningNumbers 는 Lotto 를 멤버로 가진다.
+  - [X] WinningNumbers 는 Lotto 를 멤버로 가진다.
   - [X] `class WinningNumbers`
     - [X] `Lotto lotto`
   
@@ -195,9 +195,9 @@
       - [X] 범위를 벗어난 보너스 번호로 생성 - `예외`
       - [X] 보너스 번호가 로또 번호와 중복 - `예외`
 
-- [ ] 당첨 번호와 보너스 번호로 로또들의 당첨 여부를 판별한다.
+- [X] 당첨 번호와 보너스 번호로 로또들의 당첨 여부를 판별한다.
 
-  - [ ] 구매한 로또의 번호와 당첨 번호를 비교한다.
+  - [O] 구매한 로또의 번호와 당첨 번호를 비교한다.
   
     - ### ❗비교와 당첨 판별의 주체는?
     - `Parser` 든 `WinningChecker` 든 반복 작업이 아닌 일회성 작업을 위해 클래스를 분리하는 것이 필요한가?
@@ -205,10 +205,10 @@
       클래스의 명확한 책임과 역할을 담당할 수 있도록 구현해야 한다.
     - [클래스의 역할](###) 단순히 데이터만을 보유하는 것이 아닌, `무엇`을 `하는`, 행위 또한 보유하는 것이 클래스의 역할.
     
-  - [ ] WinningNumbers 클래스가 구매한 로또들의 당첨 여부를 비교한다.
-    - [ ] `class WinningNumbers`
-    - [ ] `checkWinning()`
-    - [ ] 이 때, 당첨 결과는 정해진 특정 값에 한정되므로, 이 부분이 바로 [Enum](https://github.com/nn98/java-lotto-8/wiki/Java-Enum%EC%9D%98-%EC%82%AC%EC%9A%A9-%EC%9D%B4%EC%9C%A0) 을 활용해 구현하는 부분.
+  - [X] WinningNumbers 클래스가 구매한 로또들의 당첨 여부를 비교한다.
+    - [X] `class WinningNumbers`
+    - [X] `determineWinning()`
+    - [X] 이 때, 당첨 결과는 정해진 특정 값에 한정되므로, 이 부분이 바로 [Enum](https://github.com/nn98/java-lotto-8/wiki/Java-Enum%EC%9D%98-%EC%82%AC%EC%9A%A9-%EC%9D%B4%EC%9C%A0) 을 활용해 구현하는 부분.
       - [X] `enum Winning`
       - [X] `1st ~ 5th + losing(defeating?)`
         - ❗일치수가 3 미만이면 당첨이 아니다. 일치수 3 ~ 0 에 해당하는 enum도 생성해야?
