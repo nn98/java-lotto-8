@@ -198,19 +198,24 @@
   - [ ] WinningNumbers 클래스가 구매한 로또들의 당첨 여부를 비교한다.
     - [ ] `class WinningNumbers`
     - [ ] `checkWinning()`
-    - ❗당첨 번호와 일치 수가 3 미만일 경우 0으로 일괄 처리.
     - [ ] 이 때, 당첨 결과는 정해진 특정 값에 한정되므로, 이 부분이 바로 [Enum](https://github.com/nn98/java-lotto-8/wiki/Java-Enum%EC%9D%98-%EC%82%AC%EC%9A%A9-%EC%9D%B4%EC%9C%A0) 을 활용해 구현하는 부분.
-      - [O] `enum Winning`
+      - [X] `enum Winning`
       - [X] `1st ~ 5th + losing(defeating?)`
         - ❗일치수가 3 미만이면 당첨이 아니다. 일치수 3 ~ 0 에 해당하는 enum도 생성해야?
-        - 불필요한 코드 반복보단 일괄 꽝으로 처리하는게. 처리는 당첨 여부를 판단하는 WinningNumbers 가.
+        - 불필요한 코드 반복보단 일괄 꽝으로 처리하는게. `valueOf()` 의 `.orElse(LOSING)` 에서 처리.
       - [X] `Winning valueOf()`
       - [X] `calcPrize()`
       - `getName()` 안해도 테스트에서 문제없이 비교 가능. getter 지양. 
       - ### ㄴ `테스트`
         - [X] 당첨 번호와 보너스 번호 일치 여부로 순위 반환
           - [X] 6개 일치부터 ~ 3개 미만 일치까지, `name` 과 `prize` `@CsvSource` 로 테스트 - `기능`
-        - [ ] 지정되지 않은 값으로 `valueOf()` - `예외`
+        - [X] 지정되지 않은 값으로 `valueOf()` - `예외`
+         
+          - ### ❗예외를 굳이 throw 하는 대신
+          - 예외 발생 시 입력을 다시 받아야 한다. 이미 당첨 확인 중이라면 입력값에 오류가 없었어야 하는데  
+            이 시점에서 재입력을 받는다? 그래선 안되고 그럴 수도 없다. 예외는 자체적으로 `orElse` 처리.
+           
+        - [X] 1등 + 3등 각 1개씩 당첨 시 상금의 합도 동일 - `기능`
 
 - [ ] 판별된 당첨 여부로 당첨 수 및 당첨금을 출력한다.
   - [ ] 일치한 개수와 총 당첨금을 계산한다.
