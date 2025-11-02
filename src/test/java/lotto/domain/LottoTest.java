@@ -10,6 +10,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 class LottoTest {
+
+    @DisplayName("로또 번호의 개수가 6개가 넘어가면 예외가 발생한다.")
     @Test
     void 로또_번호의_개수가_6개가_넘어가면_예외가_발생한다() {
         assertThatThrownBy(() -> new Lotto(List.of(1, 2, 3, 4, 5, 6, 7)))
@@ -23,16 +25,23 @@ class LottoTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
-    @DisplayName("로또 번호 6개로 로또를 생성한다")
+    @DisplayName("중복되지 않는 로또 번호 6개로 로또를 생성한다.")
     @Test
-    void 로또_번호_6개로_로또를_생성한다() {
+    void 중복되지_않는_로또_번호_6개로_로또를_생성한다() {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
         assertDoesNotThrow(() -> new Lotto(numbers));
     }
 
-    @DisplayName("로또 번호의 개수가 6개보다 적으면 예외가 발생한다")
+    @DisplayName("로또 번호의 개수가 6개보다 적으면 예외가 발생한다.")
     @Test
     void 로또_번호의_개수가_6개보다_적으면_예외가_발생한다() {
+        assertThatThrownBy(() -> new Lotto(List.of(1, 2, 3, 4, 5)))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @DisplayName("로또 번호가 지정된 범위를 벗어나면 예외가 발생한다.")
+    @Test
+    void 로또_번호가_지정된_범위를_벗어나면_예외가_발생한다() {
         assertThatThrownBy(() -> new Lotto(List.of(1, 2, 3, 4, 5)))
                 .isInstanceOf(IllegalArgumentException.class);
     }
