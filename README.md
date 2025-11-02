@@ -169,13 +169,13 @@
       - 복권 / 당첨 / 당첨 복권 / 당첨 번호 / 당첨 정보 등 다양한 역할과 이름 중 적합한 것은?
       - 구글 검색 상 상위 검색어는 `당첨 번호`. WinningLotto -> WinningNumbers
       
-    - [X] `int bonusNumber`
+    - [X] `LottoNumber bonusNumber`
     - [ ] `validate()` in `constructor()`
-    - [ ] `isValidBonusNumber(int bonusNumber)`
+    - [ ] `isValidBonusNumber(LottoNumber bonusNumber)`
   
       - #### ❗보너스넘버의 중복 검증은 어느 클래스의 책임인가?
-      - 입력값 기초 유효성 검증은 InputView가. 
-      - 상세 유효성 검증은 LottoNumber가.
+      - 입력값 기초 유효성 검증은 InputView 가. 
+      - 상세 유효성 검증은 LottoNumber 가.
       - 중복 검증만 하면 될 텐데 Lotto VS WinningNumbers?
       - 실제 numbers 는 Lotto 내부에. bonusNumber 는 WinningNumbers 내부에.
       - 즉, 보너스넘버는 WinningNumbers 만의 멤버이므로,   
