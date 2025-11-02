@@ -1,5 +1,7 @@
 package lotto.presentation.view;
 
+import lotto.common.constant.ErrorMessage;
+
 public class OutputView {
 
     public static void printInputAmount() {
@@ -26,6 +28,10 @@ public class OutputView {
 
     public static void printFinalYield(int yield) {
         System.out.printf("총 수익률은 %d%%입니다.", yield);
+    }
+
+    public static void printError(Exception exception) {
+        System.out.println(exception.getMessage());
     }
 
 }
