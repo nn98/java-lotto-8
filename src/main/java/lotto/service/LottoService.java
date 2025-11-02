@@ -38,4 +38,11 @@ public class LottoService {
         this.winningNumbers = new WinningNumbers(winningNumbers, bonusNumber);
     }
 
+    public void determineEveryLotteries() {
+        this.winnings = new ArrayList<>();
+        for(Lotto lotto : userLotteries.getLotteries()) {
+            winnings.add(winningNumbers.determineWinning(lotto));
+        }
+    }
+
 }

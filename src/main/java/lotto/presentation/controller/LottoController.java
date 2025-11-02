@@ -21,6 +21,7 @@ public class LottoController {
     public void run() {
         generateUserLotteries();
         generateWinningNumbers();
+        determineUserLotteries();
     }
 
     private void generateUserLotteries() {
@@ -69,6 +70,10 @@ public class LottoController {
     private List<Integer> readUserInputWinningNumbers() {
         outputView.printInputWinningNumbers();
         return inputView.readWinningNumbers();
+    }
+
+    private void determineUserLotteries() {
+        lottoService.determineEveryLotteries();
     }
 
 }
