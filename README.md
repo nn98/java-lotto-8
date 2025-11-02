@@ -87,6 +87,9 @@
 ### `기능 요구 사항`
 
 - [ ] 사용자로부터 로또 구입 금액을 입력받아, 로또를 구매한다.
+- ### ❗구입 금액이 0원이라면 예외로 처리할까 기능으로 처리할까?
+  - 기능으로 처리한다면 당첨 번호를 받을 필요 없이 그냥 프로그램 종료도 가능.
+  - 예외로 처리해서 다시 입력받는 것이 정상적/바람직한 구현이라 판단.
 - `class InputView`
 - 모든 입력값에 대한 기초적 유효성 검증 담당
 - `readLine()` is not blank
@@ -126,7 +129,7 @@
     - [X] `validate()`에서 위 유효성 검증 로직 구현하기
 
 - [ ] 구매한 로또의 정보를 저장한다
-  - [ ] `class PurchasedLottos`
+  - [ ] `class PurchasedLotteries`
   - [ ] 저장된 로또들의 정보를 출력할 메소드를 구현한다
   - [ ] `String allLottoNumbersToString()`
 
@@ -229,7 +232,7 @@
 
 - [ ] 판별된 당첨 여부로 당첨 수 및 당첨금을 출력한다.
   - [ ] 일치한 개수와 총 당첨금을 계산한다.
-  - [ ] `List<Winning> checkWinning(purchasedLottos)`
+  - [ ] `List<Winning> checkWinning(purchasedLotteries)`
   
 - [ ] 판별된 당첨 결과와 로또 구매 금액을 기반으로 수익률을 출력한다.
   - [ ] 구매 금액과 최종 당첨금을 가지고 최종 수익률을 계산한다.

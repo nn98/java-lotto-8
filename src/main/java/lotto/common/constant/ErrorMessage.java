@@ -7,6 +7,7 @@ public enum ErrorMessage {
     NON_NUMERIC_INPUT("[ERROR] 입력값은 숫자여야 합니다."),
 
     INVALID_AMOUNT("[ERROR] 구입금액은 양의 정수여야 합니다."),
+    CANNOT_PURCHASE_AMOUNT("[ERROR] 로또를 최소 1개 이상 구매해야 합니다."),
     INDIVISIBLE_AMOUNT("[ERROR] 구입금액은 1000으로 나누어 떨어지는 값이어야 합니다."),
 
     INVALID_NUMBER("[ERROR] 로또 번호는 1부터 45 사이의 양의 정수여야 합니다."),
