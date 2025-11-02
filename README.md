@@ -97,6 +97,7 @@
   - [ ] `boolan isValidAmount(int amount)` > [Validator](#class-validator)
 
 - [ ] 로또는 6개의 로또 번호로 구성된다.
+- [ ] 모든 로또 번호는 중복되지 않는다.
 
   - [ ] `class Lotto`
     - [ ] `Set<LottoNumber> numbers`
@@ -109,10 +110,9 @@
       - [ ] `validate()`에서 위 유효성 검증 로직 구현하기 
         - #### ❗어차피 LottoNumber 가 검증하는데 중복 검증 필요성?
 
-  - [ ] 모든 로또 번호는 1~45 범위의 숫자이다.
-  - [ ] 모든 로또 번호는 중복되지 않는다.
-  - [ ] `class LottoNumber`
-    - [ ] `validate()` in `constructor()`
+  - [X] 모든 로또 번호는 1~45 범위의 숫자이다.
+  - [X] `class LottoNumber`
+    - [X] `validate()` in `constructor()`
     - [X] `getNumber()` 구현 및 toString() 에 numbers 사용
     - ### `class LottoNumber` `테스트`
       - [X] 정상 범위로 생성 - `기능`
@@ -120,7 +120,7 @@
       - [X] 초과 범위로 생성 - `예외`
       - [X] 값은 숫자를 가진 경우 equals - `기능`
       - [X] 다른 숫자를 가진 경우 notEquals - `기능`
-    - [ ] `validate()`에서 위 유효성 검증 로직 구현하기
+    - [X] `validate()`에서 위 유효성 검증 로직 구현하기
 
 - [ ] 구매한 로또의 정보를 저장한다
   - [ ] `class PurchasedLottos`
