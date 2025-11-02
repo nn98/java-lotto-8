@@ -154,7 +154,7 @@
   - [ ] winningNumbers, bonusNumber 로 WinningNumbers 를 생성한다.
   - [ ] WinningNumbers 는 Lotto 를 멤버로 가진다.
   - [O] `class WinningNumbers`
-    - [ ] `Lotto lotto`
+    - [X] `Lotto lotto`
   
       - #### ❗Lotto 를 멤버로 가지기 VS 로또를 상속해 numbers 를 멤버로 가지기
       - 상속과 다형성의 명확한 원칙에 따른 답 존재.
@@ -169,7 +169,7 @@
       - 복권 / 당첨 / 당첨 복권 / 당첨 번호 / 당첨 정보 등 다양한 역할과 이름 중 적합한 것은?
       - 구글 검색 상 상위 검색어는 `당첨 번호`. WinningLotto -> WinningNumbers
       
-    - [O] `int bonusNumber`
+    - [X] `int bonusNumber`
     - [ ] `validate()` in `constructor()`
     - [ ] `isValidBonusNumber(int bonusNumber)`
   
