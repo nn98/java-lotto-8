@@ -1,5 +1,6 @@
 package lotto.presentation.controller;
 
+import java.util.List;
 import lotto.common.constant.ErrorMessage;
 import lotto.presentation.view.InputView;
 import lotto.presentation.view.OutputView;
@@ -18,13 +19,14 @@ public class LottoController {
     }
 
     public void run() {
+        generateUserLotteries();
+        generateWinningNumbers();
+    }
+
+    private void generateUserLotteries() {
         int amount = readUserInputAmount();
         issuanceLottoByAmount(amount);
         noticePurchaseResult(amount / 1000, lottoService.getUserLotteriesToString());
-    }
-    private void issuanceLottoByAmount(int amount) {
-        lottoService.issuanceLotteries(amount);
-
     }
 
     private int readUserInputAmount() {
@@ -44,8 +46,29 @@ public class LottoController {
         return amount;
     }
 
+    private void issuanceLottoByAmount(int amount) {
+        lottoService.issuanceLotteries(amount);
+
+    }
+
     private void noticePurchaseResult(int amount, String lotteriesToString) {
         outputView.printPurchasedLotteries(amount, lotteriesToString);
+    }
+
+    private void generateWinningNumbers() {
+        List<Integer> winningNumbers = readUserInputWinningNumbers();
+        int bonusNumber = readUserInputBonusNumber();
+        lottoService.generateWinningNumbers(winningNumbers, bonusNumber);
+    }
+
+    private int readUserInputBonusNumber() {
+        outputView.printInputBonusNumber();
+        return inputView.readPositiveInt();
+    }
+
+    private List<Integer> readUserInputWinningNumbers() {
+        outputView.printInputWinningNumbers();
+        return inputView.readWinningNumbers();
     }
 
 }

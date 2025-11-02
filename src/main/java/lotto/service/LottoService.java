@@ -5,11 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 import lotto.domain.Lotto;
 import lotto.domain.UserLotteries;
+import lotto.domain.Winning;
+import lotto.domain.WinningNumbers;
 
 public class LottoService {
 
     private int amount;
     private UserLotteries userLotteries;
+    private WinningNumbers winningNumbers;
+    private List<Winning> winnings;
 
     public LottoService() {
     }
@@ -29,4 +33,9 @@ public class LottoService {
     public String getUserLotteriesToString() {
         return userLotteries.toString();
     }
+
+    public void generateWinningNumbers(List<Integer> winningNumbers, int bonusNumber) {
+        this.winningNumbers = new WinningNumbers(winningNumbers, bonusNumber);
+    }
+
 }
