@@ -102,6 +102,7 @@
   - [X] `class Lotto`
     - [X] `Set<LottoNumber> numbers`
       - [X] `validate()` in `constructor()`
+      - [X] `contains(LottoNumber lottoNumber)` 해당 로또에 특정 로또 번호의 포함 여부 반환
       - ### `class Lotto` `테스트`
         - [X] 6개의 로또 번호로 생성 - `기능`
         - [X] 중복된 로또 번호로 생성 - `예외`
