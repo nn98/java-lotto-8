@@ -205,8 +205,8 @@
         - ❗일치수가 3 미만이면 당첨이 아니다. 일치수 3 ~ 0 에 해당하는 enum도 생성해야?
         - 불필요한 코드 반복보단 일괄 꽝으로 처리하는게. 처리는 당첨 여부를 판단하는 WinningNumbers 가.
       - [X] `Winning valueOf()`
-      - [ ] `calcPrize()`
-      - [ ] `getter()`s
+      - [X] `calcPrize()`
+      - `getName()` 안해도 테스트에서 문제없이 비교 가능. getter 지양. 
       - ### ㄴ `테스트`
         - [X] 당첨 번호와 보너스 번호 일치 여부로 순위 반환
           - [X] 6개 일치부터 ~ 3개 미만 일치까지, `name` 과 `prize` `@CsvSource` 로 테스트 - `기능`
