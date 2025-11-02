@@ -7,4 +7,8 @@ public class WinningNumbers {
     public WinningNumbers(List<Integer> numbers, int bonusNumber) {
     }
 
+    public Winning determineWinning(Lotto userLotto) {
+        return null;
+    }
+
 }

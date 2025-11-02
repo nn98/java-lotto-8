@@ -1,13 +1,16 @@
 package lotto.domain;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 import java.util.Arrays;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
-public class WinningNumberTest {
+public class WinningNumbersTest {
 
     @DisplayName("당첨 번호 6개와 보너스 번호 1개로 당첨 번호를 생성한다")
     @Test
@@ -78,6 +81,29 @@ public class WinningNumberTest {
         )
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("[ERROR]");
+    }
+
+    @DisplayName("일치 개수에 따라 올바른 등급을 반환한다")
+    @ParameterizedTest
+    @CsvSource({
+            "1,2,3,4,5,6, FIRST",
+            "1,2,3,4,5,7, SECOND",
+            "1,2,3,4,5,8, THIRD",
+            "1,2,3,4,10,11, FOURTH",
+            "1,2,3,10,11,12, FIFTH",
+            "1,2,10,11,12,13, LOSING",
+            "10,11,12,13,14,15, LOSING"
+    })
+    void 일치_개수에_따라_올바른_등급을_반환한다(
+            int n1, int n2, int n3, int n4, int n5, int n6, Winning expected) {
+        WinningNumbers winningNumbers = new WinningNumbers(
+                Arrays.asList(1, 2, 3, 4, 5, 6), 7
+        );
+        Lotto userLotto = new Lotto(Arrays.asList(n1, n2, n3, n4, n5, n6));
+
+        Winning winning = winningNumbers.determineWinning(userLotto);
+
+        assertThat(winning).isEqualTo(expected);
     }
 
 }
