@@ -201,10 +201,10 @@
     - ❗당첨 번호와 일치 수가 3 미만일 경우 0으로 일괄 처리.
     - [ ] 이 때, 당첨 결과는 정해진 특정 값에 한정되므로, 이 부분이 바로 [Enum](https://github.com/nn98/java-lotto-8/wiki/Java-Enum%EC%9D%98-%EC%82%AC%EC%9A%A9-%EC%9D%B4%EC%9C%A0) 을 활용해 구현하는 부분.
       - [O] `enum Winning`
-      - [O] `1st ~ 5th + losing(defeating?)`
+      - [X] `1st ~ 5th + losing(defeating?)`
         - ❗일치수가 3 미만이면 당첨이 아니다. 일치수 3 ~ 0 에 해당하는 enum도 생성해야?
         - 불필요한 코드 반복보단 일괄 꽝으로 처리하는게. 처리는 당첨 여부를 판단하는 WinningNumbers 가.
-      - [O] `Winning valueOf()`
+      - [X] `Winning valueOf()`
       - [ ] `calcPrize()`
       - [ ] `getter()`s
       - ### ㄴ `테스트`
