@@ -45,17 +45,17 @@ public class InputView {
                 .collect(Collectors.toList());
     }
 
+    private void validateNotBlank(String input) {
+        if (input == null || input.isBlank()) {
+            throw new IllegalArgumentException(ErrorMessage.INVALID_INPUT.getMessage());
+        }
+    }
+
     private int parseInteger(String input) {
         try {
             return Integer.parseInt(input);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException(ErrorMessage.NON_NUMERIC_INPUT.getMessage());
-        }
-    }
-
-    private void validateNotBlank(String input) {
-        if (input == null || input.isBlank()) {
-            throw new IllegalArgumentException(ErrorMessage.INVALID_INPUT.getMessage());
         }
     }
 
