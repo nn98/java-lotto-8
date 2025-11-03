@@ -48,7 +48,7 @@ public class Statistics {
                 ).sum();
     }
 
-    public double calcProfit(int amount) {
+    public double calcYield(int amount) {
         int totalPrize = calcTotalPrize();
         return totalPrize / (double) amount;
     }
