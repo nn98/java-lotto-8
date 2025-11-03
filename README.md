@@ -354,17 +354,17 @@
 
 <ul>
 
-- [ ] 로또 구입 금액을 입력 받는다. 구입 금액은 1,000원 단위로 입력 받으며 1,000원으로 나누어 떨어지지 않는 경우 예외 처리한다.
+- [X] 로또 구입 금액을 입력 받는다. 구입 금액은 1,000원 단위로 입력 받으며 1,000원으로 나누어 떨어지지 않는 경우 예외 처리한다.
 </ul>
 <pre><code data-highlighted="yes" class="hljs language-undefined">14000</code></pre>
 <ul>
 
-- [ ] 당첨 번호를 입력 받는다. 번호는 쉼표(,)를 기준으로 구분한다.
+- [X] 당첨 번호를 입력 받는다. 번호는 쉼표(,)를 기준으로 구분한다.
 </ul>
 <pre><code data-highlighted="yes" class="hljs language-apache"><span class="hljs-attribute">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span></code></pre>
 <ul>
 
-- [ ] 보너스 번호를 입력 받는다.
+- [X] 보너스 번호를 입력 받는다.
 </ul>
 <pre><code data-highlighted="yes" class="hljs language-undefined">7</code></pre>
 
@@ -376,7 +376,7 @@
 
 <ul>
 
-- [ ] 발행한 로또 수량 및 번호를 출력한다. 로또 번호는 오름차순으로 정렬하여 보여준다.
+- [X] 발행한 로또 수량 및 번호를 출력한다. 로또 번호는 오름차순으로 정렬하여 보여준다.
 </ul>
 <pre><code data-highlighted="yes" class="hljs language-prolog"><span class="hljs-number">8</span>개를 구매했습니다.
 [<span class="hljs-number">8</span>, <span class="hljs-number">21</span>, <span class="hljs-number">23</span>, <span class="hljs-number">41</span>, <span class="hljs-number">42</span>, <span class="hljs-number">43</span>]
@@ -389,7 +389,7 @@
 [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">14</span>, <span class="hljs-number">22</span>, <span class="hljs-number">45</span>]</code></pre>
 <ul>
 
-- [ ] 당첨 내역을 출력한다.
+- [X] 당첨 내역을 출력한다.
 </ul>
 <pre><code data-highlighted="yes" class="hljs language-apache"><span class="hljs-attribute">3</span>개 일치 (<span class="hljs-number">5</span>,<span class="hljs-number">000</span>원) - <span class="hljs-number">1</span>개
 <span class="hljs-attribute">4</span>개 일치 (<span class="hljs-number">50</span>,<span class="hljs-number">000</span>원) - <span class="hljs-number">0</span>개
@@ -398,12 +398,12 @@
 <span class="hljs-attribute">6</span>개 일치 (<span class="hljs-number">2</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span>원) - <span class="hljs-number">0</span>개</code></pre>
 <ul>
 
-- [ ] 수익률은 소수점 둘째 자리에서 반올림한다. (ex. 100.0%, 51.5%, 1,000,000.0%)
+- [X] 수익률은 소수점 둘째 자리에서 반올림한다. (ex. 100.0%, 51.5%, 1,000,000.0%)
 </ul>
 <pre><code data-highlighted="yes" class="hljs language-erlang-repl">총 수익률은 <span class="hljs-number">62.5</span><span class="hljs-comment">%입니다.</span></code></pre>
 <ul>
 
-- [ ] 예외 상황 시 에러 문구를 출력해야 한다. 단, 에러 문구는 "[ERROR]"로 시작해야 한다.
+- [X] 예외 상황 시 에러 문구를 출력해야 한다. 단, 에러 문구는 "[ERROR]"로 시작해야 한다.
 </ul>
 <pre><code data-highlighted="yes" class="hljs language-prolog">[<span class="hljs-symbol">ERROR</span>] 로또 번호는 <span class="hljs-number">1</span>부터 <span class="hljs-number">45</span> 사이의 숫자여야 합니다.</code></pre>
 <h4>실행 결과 예시</h4>
@@ -437,7 +437,7 @@
 
 ### 💡 생각할 부분
 
-- [ ] ❗잘못된 입력에 대한 재시도, 반복 처리는 어떻게?
+- [X] ❗잘못된 입력에 대한 재시도, 반복 처리는 어떻게?
   - 에러가 발생핟다면 재귀적으로 해당 메서드를 재호출해서 리턴하면 될 듯
   - 에러 발생 시점은? 
     - inputView 에서 정상적인 값인지 검증
