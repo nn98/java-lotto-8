@@ -7,7 +7,7 @@ public class OutputView {
     }
 
     public void printPurchasedLotteries(int count, String lotteriesToString) {
-        System.out.printf("\n%d개를 구매했습니다.\n%s", count, lotteriesToString);
+        System.out.printf("%n%d개를 구매했습니다.%n%s%n", count, lotteriesToString);
     }
 
     public void printInputWinningNumbers() {
@@ -29,7 +29,7 @@ public class OutputView {
     }
 
     public void printError(Exception exception) {
-        System.out.println("\n" + exception.getMessage());
+        System.out.println(exception.getMessage());
     }
 
     public void prinLine(String line) {
