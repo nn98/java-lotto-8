@@ -313,17 +313,18 @@
 ### ❗ 코딩
 
 - [ ] [pr 체크리스트](pr_checklist.md) 준수
-- [ ] 3항 연산자 배제
-- [ ] 중복 코드 추출
-- [ ] 작명에 자료형 배제
-- [ ] 메서드의 길이 15라인 이내로 제한
+- [X] 3항 연산자 배제
+- [X] 중복 코드 추출
+- [X] 작명에 자료형 배제
+- [X] 메서드의 길이 15라인 이내로 제한
 - [X] [Java Enum 적용해서 구현](https://github.com/nn98/java-lotto-8/wiki/Java-Enum%EC%9D%98-%EC%82%AC%EC%9A%A9-%EC%9D%B4%EC%9C%A0)
 - [X] Lotto 클래스 관련
   - [X] 제공된 Lotto 클래스를 사용하여 구현해야 한다.
     - 제공된 구조를 기반으로 추가 기능을 구현
-  - [ ] Lotto에 numbers 이외의 필드(인스턴스 변수)를 추가할 수 없다.
+  - [X] Lotto에 numbers 이외의 필드(인스턴스 변수)를 추가할 수 없다.
     - 이는 곧 numbers만으로 기능 구현은 충분히 가능
-  - [ ] numbers의 접근 제어자인 private은 변경할 수 없다.
+    - ### ❗ 상수는 인스턴스 변수 일거같긴한데 추가하면 안되려나?
+  - [X] numbers의 접근 제어자인 private은 변경할 수 없다.
     - 접근 제어자는 유지해서 은닉하되 타입은 가변
   - [X] Lotto의 패키지를 변경할 수 있다.
     - 아키텍처와 패턴에 맞춰 원하는 패키지로 이동 가능 
@@ -331,16 +332,17 @@
 ### ❗ 테스트
 
 - [X] 클래스와 함수에 대한 단위 테스트를 통해 의도한 대로 정확하게 작동하는 영역을 확보한다.
-- [ ] 기능 구현을 완료한 후 가이드에 따라 모든 테스트가 성공적으로 실행되는지 확인한다.
-- [ ] JUnit 5와 AssertJ를 이용하여 정리한 기능 목록이 정상적으로 작동하는지 테스트 코드로 확인한다.
+- [X] 기능 구현을 완료한 후 가이드에 따라 모든 테스트가 성공적으로 실행되는지 확인한다.
+- [X] JUnit 5와 AssertJ를 이용하여 정리한 기능 목록이 정상적으로 작동하는지 테스트 코드로 확인한다.
 - [X] 구현한 기능에 대한 단위 테스트를 작성한다. 단, UI(System.out, System.in, Scanner) 로직은 제외한다.
 - [X] 단위 테스트 작성이 익숙하지 않다면 LottoTest를 참고하여 학습한 후 테스트를 작성한다.
 
 ### ❗ 의존성
 
-- [ ] `camp.nextstep.edu.missionutils`에서 제공하는 `Randoms` 및 `Console` API를 사용하여 구현해야 한다.
-  - [ ] Random 값 추출은 `camp.nextstep.edu.missionutils.Randoms`의 `pickUniqueNumbersInRange()`를 활용한다.
-  - [ ] 사용자가 입력하는 값은 `camp.nextstep.edu.missionutils.Console`의 `readLine()`을 활용한다.
+- [X] `camp.nextstep.edu.missionutils`에서 제공하는 `Randoms` 및 `Console` API를 사용하여 구현해야 한다.
+  - [X] Random 값 추출은 `camp.nextstep.edu.missionutils.Randoms`의 `pickUniqueNumbersInRange()`를 활용한다.
+  - [X] 사용자가 입력하는 값은 `camp.nextstep.edu.missionutils.Console`의 `readLine()`을 활용한다.
+    - [X] 다른 값 입력들도 `readLine()` 기반으로 동작하도록 구현
 
 ---
 
