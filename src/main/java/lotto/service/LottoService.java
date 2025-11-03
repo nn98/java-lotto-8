@@ -4,6 +4,7 @@ import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
 import lotto.domain.Lotto;
+import lotto.domain.Statistics;
 import lotto.domain.UserLotteries;
 import lotto.domain.Winning;
 import lotto.domain.WinningNumbers;
@@ -14,6 +15,7 @@ public class LottoService {
     private UserLotteries userLotteries;
     private WinningNumbers winningNumbers;
     private List<Winning> winnings;
+    private Statistics statistics;
 
     public LottoService() {
     }
@@ -43,6 +45,15 @@ public class LottoService {
         for(Lotto lotto : userLotteries.getLotteries()) {
             winnings.add(winningNumbers.determineWinning(lotto));
         }
+        generateStatistics();
+    }
+
+    private void generateStatistics() {
+        this.statistics = new Statistics(this.winnings);
+    }
+
+    public String getStatisticsToString() {
+        return statistics.getStatisticsToString();
     }
 
 }
