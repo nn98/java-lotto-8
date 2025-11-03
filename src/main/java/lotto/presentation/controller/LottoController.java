@@ -22,7 +22,7 @@ public class LottoController {
         generateUserLotteries();
         generateWinningNumbers();
         determineUserLotteries();
-        printWinningStatistics();
+        noticeWinningStatistics();
     }
 
     private void generateUserLotteries() {
@@ -77,7 +77,7 @@ public class LottoController {
         lottoService.determineEveryLotteries();
     }
 
-    private void printWinningStatistics() {
+    private void noticeWinningStatistics() {
         String statistics = lottoService.getStatisticsToString();
         outputView.printWinningStatistics(statistics);
     }
