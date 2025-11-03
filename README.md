@@ -251,12 +251,13 @@
   - [ ] `List<Winning> winnings`
   - [ ] `int totalPrize`
 
+- [ ] 일치한 개수와 총 당첨금을 계산한다.
+  - [ ] `calcTotalPrize()`
 - [ ] 판별된 당첨 여부로 당첨 수 및 당첨금을 출력한다.
-  - [ ] 일치한 개수와 총 당첨금을 계산한다.
   
 - [ ] 판별된 당첨 결과와 로또 구매 금액을 기반으로 수익률을 출력한다.
   - [ ] 구매 금액과 최종 당첨금을 가지고 최종 수익률을 계산한다.
-  - [ ] `double calcProfit(int amount, int totalPrize)`
+  - [ ] `calcProfit(int amount, int totalPrize)`
 
 - [ ] 로또 게임을 종료한다.
   - [ ] `InputView.close()`
