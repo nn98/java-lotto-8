@@ -245,19 +245,20 @@
            
         - [X] 1등 + 3등 각 1개씩 당첨 시 상금의 합도 동일 - `기능`
 
-- [ ] 판별된 당첨 결과를 저장한다.
-- [ ] `class Statistics`
-  - [ ] `int amount`
-  - [ ] `List<Winning> winnings`
-  - [ ] `int totalPrize`
+- [O] 판별된 당첨 결과를 저장한다.
+- [X] `class Statistics`
+  - [X] `List<Winning> winnings`
+  - [X] `getStatisticsToString()` - 당첨 통계 문자열로 리턴
+  - [X] `buildWinningCounts()` - 통계 계산을 위한 당첨 결과 Map으로 집계
+  - [X] `buildStatistics()` - 각 등수의 로또 당첨 결과 문자열로 빌드
+  - [X] `calcTotalPrize()` - 당첨금 합계 계산
+  - [X] `calcProfit()` - 총 수익률 계산, 구매금액 필요
 
-- [ ] 일치한 개수와 총 당첨금을 계산한다.
-  - [ ] `calcTotalPrize()`
 - [ ] 판별된 당첨 여부로 당첨 수 및 당첨금을 출력한다.
   
-- [ ] 판별된 당첨 결과와 로또 구매 금액을 기반으로 수익률을 출력한다.
-  - [ ] 구매 금액과 최종 당첨금을 가지고 최종 수익률을 계산한다.
-  - [ ] `calcProfit(int amount, int totalPrize)`
+- [X] 판별된 당첨 결과와 로또 구매 금액을 기반으로 수익률을 출력한다.
+  - [X] 구매 금액과 최종 당첨금을 가지고 최종 수익률을 계산한다.
+  - [X] `calcProfit(int amount, int totalPrize)`
 
     - ### ❗amount 의 위치는?
     - Service? 입력받아서 구매를 진행하는게 서비스이므로.
@@ -269,7 +270,7 @@
 - [ ] 로또 게임을 종료한다.
   - [ ] `InputView.close()`
 
-- [ ] 사용자가 잘못된 값을 입력할 경우, `IllegalArgumentException`을 발생시키고,  
+- [X] 사용자가 잘못된 값을 입력할 경우, `IllegalArgumentException`을 발생시키고,  
   "[ERROR]"로 시작하는 에러 메시지를 출력 후 그 부분부터 `입력을 다시 받는다.`
 
   - [O] `예외`
