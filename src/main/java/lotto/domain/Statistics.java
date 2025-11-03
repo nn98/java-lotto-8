@@ -37,10 +37,10 @@ public class Statistics {
         }
     }
 
-    public int calcTotalPrize() {
+    public long calcTotalPrize() {
         return buildWinningCounts().entrySet()
                 .stream()
-                .mapToInt(
+                .mapToLong(
                         entry -> entry.getKey()
                                 .calcPrize(
                                         entry.getValue()
@@ -50,7 +50,7 @@ public class Statistics {
     }
 
     public double calcYield(int amount) {
-        int totalPrize = calcTotalPrize();
+        long totalPrize = calcTotalPrize();
         return 100 * totalPrize / (double) amount;
     }
 

@@ -34,7 +34,7 @@ public class StatisticsTest {
         );
         Statistics statistics = new Statistics(winnings);
 
-        int totalPrize = statistics.calcTotalPrize();
+        long totalPrize = statistics.calcTotalPrize();
         int expected = 2_000_000_000 + 30_000_000;
 
         assertThat(totalPrize).isEqualTo(expected);
