@@ -32,7 +32,7 @@ public class Statistics {
     private void buildStatistics(StringBuilder statistics, Map<Winning, Long> counts) {
         for (Winning winning : Winning.values()) {
             long count = counts.getOrDefault(winning, 0L);
-            statistics.append(winning.getStatisticsFormat((int) count));
+            statistics.append(winning.getStatisticsFormat((int) count) + "\n");
         }
     }
 
