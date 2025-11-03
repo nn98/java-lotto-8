@@ -24,8 +24,8 @@ public class OutputView {
                 + statistics);
     }
 
-    public void printFinalYield(int yield) {
-        System.out.printf("총 수익률은 %d%%입니다.", yield);
+    public void printFinalYield(double yield) {
+        System.out.printf("총 수익률은 %.1f입니다.", yield);
     }
 
     public void printError(Exception exception) {
