@@ -96,8 +96,8 @@
 - `class InputView`
 - 모든 입력값에 대한 기초적 유효성 검증 담당
 - `readLine()` is not blank
-- `readInt()` is Numeric
-- `readWinningNumbers()` is can split by "," / each token is Numeric
+- `readPositiveInt()` is Numeric, positive integer
+- `readWinningNumbers()` is can split by "," / each token is Numeric / ...
 
 - [X] 구매한 로또의 정보를 저장한다
   - [X] `class UserLotteries`
@@ -150,7 +150,10 @@
     - [X] 구분자 오류나 6개 이외의 숫자를 입력한 경우 예외 발생. - `validate(String input)`
     - [X] 각 숫자의 중복이나 범위를 벗어난 경우 `Lotto` 생성 단계에서 예외 발생.
     - [X] 하지만, 설계한 대로 반복적 유효성 검증을 통한 유효성 보장 구현, 
-    - [X] `parseNumbers()` /  / `parseInteger()`
+    - [X] `parsePositiveInteger()` - 각 숫자가 양수임을 검증 
+    - [X] `validate()` in `parseNumbers()`
+      - [X] `splitTokensIfValid()` 쉼표를 기준으로 스플릿한 토큰이 정확히 6개가 아니면 예외
+      - [X] `validateDuplicated()` 쉼표를 기준으로 스플릿한 토큰 중 중복이 존재하면 예외
     - [X] 6개의 숫자를 쉼표로 구분해서 입력 - `기능`
     - [X] 숫자를 공백 등 잘못된 구분자로 구분해서 입력 - `예외`
     
@@ -163,6 +166,7 @@
           일단은 비즈니스 로직에 유효성 검증이 있으니 스킵, 추후 고려
       
   - [X] 6개의 당첨 번호로 winningNumbers List 를 생성한다.
+    - [X] `parseNumbers()`
     
   - [X] 1개의 보너스 번호를 입력받는다.
   - [X] 보너스 번호는 로또 번호와 동일한 유효성 검증을 진행하고, 당첨 번호들과 중복되지 않아야 한다.
