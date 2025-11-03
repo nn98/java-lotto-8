@@ -51,7 +51,6 @@ public class LottoController {
 
     private void issuanceLottoByAmount(int amount) {
         lottoService.issuanceLotteries(amount);
-
     }
 
     private void noticePurchaseResult(int amount, String lotteriesToString) {
@@ -64,14 +63,24 @@ public class LottoController {
         lottoService.generateWinningNumbers(winningNumbers, bonusNumber);
     }
 
-    private int readUserInputBonusNumber() {
-        outputView.printInputBonusNumber();
-        return inputView.readPositiveInt();
+    private List<Integer> readUserInputWinningNumbers() {
+        try {
+            outputView.printInputWinningNumbers();
+            return inputView.readWinningNumbers();
+        } catch (IllegalArgumentException exception) {
+            outputView.printError(exception);
+            return readUserInputWinningNumbers();
+        }
     }
 
-    private List<Integer> readUserInputWinningNumbers() {
-        outputView.printInputWinningNumbers();
-        return inputView.readWinningNumbers();
+    private int readUserInputBonusNumber() {
+        try {
+            outputView.printInputBonusNumber();
+            return inputView.readPositiveInt();
+        } catch (IllegalArgumentException exception) {
+            outputView.printError(exception);
+            return readUserInputBonusNumber();
+        }
     }
 
     private void determineUserLotteries() {
@@ -87,5 +96,4 @@ public class LottoController {
         double yield = lottoService.getTotalYield();
         outputView.printFinalYield(yield);
     }
-
 }
