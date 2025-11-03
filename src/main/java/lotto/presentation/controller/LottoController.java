@@ -23,6 +23,7 @@ public class LottoController {
         generateWinningNumbers();
         determineUserLotteries();
         noticeWinningStatistics();
+        noticeTotalYield();
     }
 
     private void generateUserLotteries() {
@@ -80,6 +81,11 @@ public class LottoController {
     private void noticeWinningStatistics() {
         String statistics = lottoService.getStatisticsToString();
         outputView.printWinningStatistics(statistics);
+    }
+
+    private void noticeTotalYield() {
+        double yield = lottoService.getTotalYield();
+        outputView.printFinalYield(yield);
     }
 
 }
