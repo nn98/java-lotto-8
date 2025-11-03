@@ -21,6 +21,7 @@ public class LottoService {
     }
 
     public void issuanceLotteries(int amount) {
+        this.amount = amount;
         List<Lotto> lotteries = new ArrayList<>();
         for (int i = amount / 1000 ; i > 0 ; i--) {
             lotteries.add(issuanceLotto());
@@ -56,4 +57,7 @@ public class LottoService {
         return statistics.getStatisticsToString();
     }
 
+    public double getTotalYield() {
+        return statistics.calcYield(this.amount);
+    }
 }
