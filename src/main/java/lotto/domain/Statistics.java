@@ -37,7 +37,7 @@ public class Statistics {
         }
     }
 
-    private int calcTotalPrize() {
+    public int calcTotalPrize() {
         return buildWinningCounts().entrySet()
                 .stream()
                 .mapToInt(
