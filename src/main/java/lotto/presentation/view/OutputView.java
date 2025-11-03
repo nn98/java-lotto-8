@@ -20,7 +20,7 @@ public class OutputView {
 
     public void printWinningStatistics(String statistics) {
         System.out.println("\n당첨 통계\n"
-                + "---"
+                + "---\n"
                 + statistics);
     }
 
