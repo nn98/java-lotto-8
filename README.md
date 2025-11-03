@@ -214,7 +214,7 @@
 
 - [X] 당첨 번호와 보너스 번호로 로또들의 당첨 여부를 판별한다.
 
-  - [O] 구매한 로또의 번호와 당첨 번호를 비교한다.
+  - [X] 구매한 로또의 번호와 당첨 번호를 비교한다.
   
     - ### ❗비교와 당첨 판별의 주체는?
     - `Parser` 든 `WinningChecker` 든 반복 작업이 아닌 일회성 작업을 위해 클래스를 분리하는 것이 필요한가?
@@ -223,6 +223,7 @@
     - [클래스의 역할](###) 단순히 데이터만을 보유하는 것이 아닌, `무엇`을 `하는`, 행위 또한 보유하는 것이 클래스의 역할.
     
   - [X] WinningNumbers 클래스가 구매한 로또들의 당첨 여부를 비교한다.
+  - [X] `determineEveryLotteries()`
     - [X] `class WinningNumbers`
     - [X] `determineWinning()`
     - [X] 이 때, 당첨 결과는 정해진 특정 값에 한정되므로, 이 부분이 바로 [Enum](https://github.com/nn98/java-lotto-8/wiki/Java-Enum%EC%9D%98-%EC%82%AC%EC%9A%A9-%EC%9D%B4%EC%9C%A0) 을 활용해 구현하는 부분.
@@ -244,9 +245,14 @@
            
         - [X] 1등 + 3등 각 1개씩 당첨 시 상금의 합도 동일 - `기능`
 
+- [ ] 판별된 당첨 결과를 저장한다.
+- [ ] `class Statistics`
+  - [ ] `int amount`
+  - [ ] `List<Winning> winnings`
+  - [ ] `int totalPrize`
+
 - [ ] 판별된 당첨 여부로 당첨 수 및 당첨금을 출력한다.
   - [ ] 일치한 개수와 총 당첨금을 계산한다.
-  - [ ] `List<Winning> checkWinning(purchasedLotteries)`
   
 - [ ] 판별된 당첨 결과와 로또 구매 금액을 기반으로 수익률을 출력한다.
   - [ ] 구매 금액과 최종 당첨금을 가지고 최종 수익률을 계산한다.
