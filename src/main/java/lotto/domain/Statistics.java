@@ -31,6 +31,7 @@ public class Statistics {
 
     private void buildStatistics(StringBuilder statistics, Map<Winning, Long> counts) {
         for (Winning winning : Winning.values()) {
+            if (winning == Winning.LOSING) continue;
             long count = counts.getOrDefault(winning, 0L);
             statistics.append(winning.getStatisticsFormat((int) count) + "\n");
         }
@@ -50,7 +51,7 @@ public class Statistics {
 
     public double calcYield(int amount) {
         int totalPrize = calcTotalPrize();
-        return totalPrize / (double) amount;
+        return 100 * totalPrize / (double) amount;
     }
 
 }
