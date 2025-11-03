@@ -22,6 +22,18 @@ public class InputView {
         return parsePositiveInteger(readLine());
     }
 
+    private int parsePositiveInteger(String input) {
+        try {
+            int number = Integer.parseInt(input);
+            if (number < 1) {
+                throw new IllegalArgumentException(ErrorMessage.NON_POSITIVE_INPUT.getMessage());
+            }
+            return number;
+        } catch (Exception e) {
+            throw new IllegalArgumentException(ErrorMessage.NON_NUMERIC_INPUT.getMessage());
+        }
+    }
+
     public List<Integer> readWinningNumbers() {
         String input = readLine();
         return parseNumbers(input);
@@ -53,18 +65,6 @@ public class InputView {
         Set<String> numbers = new HashSet<>(Arrays.asList(tokens));
         if (numbers.size() != tokens.length) {
             throw new IllegalArgumentException(ErrorMessage.INVALID_WINNING_NUMBERS.getMessage());
-        }
-    }
-
-    private int parsePositiveInteger(String input) {
-        try {
-            int number = Integer.parseInt(input);
-            if (number < 1) {
-                throw new IllegalArgumentException(ErrorMessage.NON_POSITIVE_INPUT.getMessage());
-            }
-            return number;
-        } catch (Exception e) {
-            throw new IllegalArgumentException(ErrorMessage.NON_NUMERIC_INPUT.getMessage());
         }
     }
 
