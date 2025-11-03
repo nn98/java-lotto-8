@@ -10,6 +10,7 @@ public enum ErrorMessage {
     CANNOT_PURCHASE_AMOUNT("[ERROR] 로또를 최소 1개 이상 구매해야 합니다."),
     INDIVISIBLE_AMOUNT("[ERROR] 구입금액은 1000으로 나누어 떨어지는 값이어야 합니다."),
 
+    INVALID_WINNING_NUMBERS("[ERROR] 당첨 번호는 정확히 여섯 개의 로또 번호를 쉼표(,)로 구분해서 입력해야 합니다."),
     INVALID_NUMBER("[ERROR] 로또 번호는 1부터 45 사이의 양의 정수여야 합니다."),
     INVALID_NUMBER_COUNT("[ERROR] 로또 번호는 6개여야 합니다."),
     DUPLICATED_NUMBER("[ERROR] 로또 번호는 중복되지 않는 값이어야 합니다.");
